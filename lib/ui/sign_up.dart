@@ -1,13 +1,12 @@
-import 'package:findit_offline_first/ui/sign_up.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +21,24 @@ class _LoginPageState extends State<LoginPage> {
               height: 16.0,
             ),
             Text(
-              'Login to Find It',
+              'Create your Account',
               textAlign: TextAlign.center,
               textScaleFactor: 1.8,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                  labelText: 'Enter Username', border: OutlineInputBorder()),
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                  labelText: 'Enter Phone Number',
+                  border: OutlineInputBorder()),
             ),
             SizedBox(
               height: 16.0,
@@ -37,55 +51,37 @@ class _LoginPageState extends State<LoginPage> {
               height: 16.0,
             ),
             TextFormField(
-              obscureText: true,
               decoration: InputDecoration(
                   labelText: 'Enter Password', border: OutlineInputBorder()),
             ),
             SizedBox(
               height: 16.0,
             ),
-            RaisedButton(
-              color: Colors.blue,
-              onPressed: _onLoginClick,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                child: Text(
-                  'LOGIN',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
+            TextFormField(
+              decoration: InputDecoration(
+                  labelText: 'Re-enter Password', border: OutlineInputBorder()),
             ),
             SizedBox(
               height: 16.0,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Don\' Have an Account?'),
-                SizedBox(
-                  width: 8.0,
+            RaisedButton(
+              color: Colors.blue,
+              onPressed: _onSignUpClick,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                child: Text(
+                  'SIGN UP',
+                  style: TextStyle(color: Colors.white),
                 ),
-                FlatButton(
-                    color: Colors.blueGrey,
-                    onPressed: _onSignUpClick,
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(color: Colors.white),
-                    ))
-              ],
-            )
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  void _onLoginClick() async {
-    //
-  }
-
   void _onSignUpClick() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => SignUpPage()));
+    //
   }
 }
