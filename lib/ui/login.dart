@@ -1,3 +1,4 @@
+import 'package:findit_offline_first/ui/home/home.dart';
 import 'package:findit_offline_first/ui/sign_up.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +82,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _onLoginClick() async {
-    //
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => HomePage()));
   }
 
   void _onSignUpClick() async {
