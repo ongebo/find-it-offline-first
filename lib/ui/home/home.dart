@@ -1,4 +1,5 @@
 import 'package:findit_offline_first/ui/home/lost_and_found_card.dart';
+import 'package:findit_offline_first/ui/report_lost_and_found_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,14 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text('Lost and Found'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ReportLostAndFoundItemPage()));
+              }),
+        ],
       ),
       body: GridView.count(
         crossAxisCount: 2,
